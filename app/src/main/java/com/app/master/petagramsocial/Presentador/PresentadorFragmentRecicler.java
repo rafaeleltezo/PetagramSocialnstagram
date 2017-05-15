@@ -6,6 +6,7 @@ import android.widget.Toast;
 import com.app.master.petagramsocial.Modelo.AdaptadorRetrofitConexion;
 import com.app.master.petagramsocial.Modelo.Contacto;
 import com.app.master.petagramsocial.Modelo.ContactoRespuesta;
+import com.app.master.petagramsocial.Modelo.DeserializadorInstagramMediaRecent;
 import com.app.master.petagramsocial.Modelo.Endpoint;
 import com.app.master.petagramsocial.Vista.iFragmentReciclerView;
 
@@ -44,7 +45,7 @@ public class PresentadorFragmentRecicler implements iPresentadorFramentRecicler 
     @Override
     public void obtenerMediosRecientes() {
         AdaptadorRetrofitConexion adaptador=new AdaptadorRetrofitConexion();
-        Endpoint endpoint=adaptador.retrofit();
+        Endpoint endpoint=adaptador.retrofit(adaptador.construyeGsonDeserializador());
         Call<ContactoRespuesta>call=endpoint.getRecientes();
         call.enqueue(new Callback<ContactoRespuesta>() {
             @Override

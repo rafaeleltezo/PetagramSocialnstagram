@@ -1,5 +1,8 @@
 package com.app.master.petagramsocial.Modelo;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -9,11 +12,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AdaptadorRetrofitConexion {
 
-    public Endpoint retrofit(){
+    public Endpoint retrofit(Gson gson){
         Retrofit retrofit=new Retrofit.Builder()
                 .baseUrl(ConstantesConsultaMediaRecent.URLBASE)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         return retrofit.create(Endpoint.class);
+    }
+    public Gson construyeGsonDeserializador(){
+        GsonBuilder gsonBuilder=new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(ContactoRespuesta.class,new DeserializadorInstagramMediaRecent());
+        return gsonBuilder.create();
     }
 }
