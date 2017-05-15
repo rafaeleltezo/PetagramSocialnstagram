@@ -7,4 +7,5 @@ package com.app.master.petagramsocial.Presentador;
 public interface iPresentadorFramentRecicler {
     public void establecerLayout();
     public void establecerAdaptador();
+    public void obtenerMediosRecientes();
 }
