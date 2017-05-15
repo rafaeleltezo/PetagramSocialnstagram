@@ -24,7 +24,8 @@ public class DeserializadorInstagramMediaRecent implements JsonDeserializer<Cont
         Gson gson = new Gson();
         ContactoRespuesta contactoRespuesta = gson.fromJson(json, ContactoRespuesta.class);
         JsonArray jsonArrayData = json.getAsJsonObject().getAsJsonArray(ConstantesJsonGetRecentMedia.DATA_OBJECT);
-        return null;
+        contactoRespuesta.setContactos(deserializadorContacto(jsonArrayData));
+        return contactoRespuesta;
     }
 
     public ArrayList<Contacto> deserializadorContacto(JsonArray jsonArray) {
@@ -41,7 +42,11 @@ public class DeserializadorInstagramMediaRecent implements JsonDeserializer<Cont
             JsonObject jsonLike = jsonObjeto.getAsJsonObject(ConstantesJsonGetRecentMedia.LIKE_OBJECT);
             contacto.setLike(jsonLike.get(ConstantesJsonGetRecentMedia.LIKE).getAsInt());
 
+            JsonObject jsonFoto=jsonObjeto.getAsJsonObject(ConstantesJsonGetRecentMedia.IMAGEN_OBJECT)
+                    .getAsJsonObject(ConstantesJsonGetRecentMedia.IMAGEN_RESOLUCION_OBJECT);
+            contacto.setUrlPerfil(jsonFoto.get(ConstantesJsonGetRecentMedia.URL_IMAGEN).getAsString());
 
+            contactos.add(contacto);
         }
         return contactos;
     }
