@@ -9,6 +9,7 @@ import com.app.master.petagramsocial.Modelo.ContactoRespuesta;
 import com.app.master.petagramsocial.Modelo.DeserializadorInstagramMediaRecent;
 import com.app.master.petagramsocial.Modelo.Endpoint;
 import com.app.master.petagramsocial.Vista.iFragmentReciclerView;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -45,7 +46,8 @@ public class PresentadorFragmentRecicler implements iPresentadorFramentRecicler 
     @Override
     public void obtenerMediosRecientes() {
         AdaptadorRetrofitConexion adaptador=new AdaptadorRetrofitConexion();
-        Endpoint endpoint=adaptador.retrofit(adaptador.construyeGsonDeserializador());
+        Gson gson=adaptador.construyeGsonDeserializador();
+        Endpoint endpoint=adaptador.retrofit(gson);
         Call<ContactoRespuesta>call=endpoint.getRecientes();
         call.enqueue(new Callback<ContactoRespuesta>() {
             @Override
