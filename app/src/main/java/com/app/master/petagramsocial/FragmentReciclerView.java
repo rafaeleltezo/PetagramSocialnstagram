@@ -53,7 +53,7 @@ public class FragmentReciclerView extends Fragment implements iFragmentReciclerV
 
     @Override
     public AdaptadorFragmentoRecicler crearAdaptador(ArrayList<Contacto>contactos, Context context) {
-        AdaptadorFragmentoRecicler adaptador=new AdaptadorFragmentoRecicler(contactos,context);
+        AdaptadorFragmentoRecicler adaptador=new AdaptadorFragmentoRecicler(contactos,context,getActivity());
         return adaptador;
     }
 }
