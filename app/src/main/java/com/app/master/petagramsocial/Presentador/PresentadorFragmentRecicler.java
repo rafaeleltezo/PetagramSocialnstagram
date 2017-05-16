@@ -54,6 +54,7 @@ public class PresentadorFragmentRecicler implements iPresentadorFramentRecicler 
             public void onResponse(Call<ContactoRespuesta> call, Response<ContactoRespuesta> response) {
                 ContactoRespuesta contactoRespuesta=response.body();
                  contactos = contactoRespuesta.getContactos();
+                establecerAdaptador();
             }
 
             @Override
@@ -62,6 +63,7 @@ public class PresentadorFragmentRecicler implements iPresentadorFramentRecicler 
             }
         });
     }
+
 
 
 }

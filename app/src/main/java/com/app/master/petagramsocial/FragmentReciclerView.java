@@ -31,7 +31,7 @@ public class FragmentReciclerView extends Fragment implements iFragmentReciclerV
         recyclerView=(RecyclerView)v.findViewById(R.id.recycler);
         presentador=new PresentadorFragmentRecicler(this,getContext());
         presentador.establecerLayout();
-        presentador.establecerAdaptador();
+
         return v;
     }
 
