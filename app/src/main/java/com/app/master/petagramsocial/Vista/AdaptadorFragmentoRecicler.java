@@ -7,9 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.master.petagramsocial.Modelo.Contacto;
 import com.app.master.petagramsocial.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,6 +38,11 @@ public class AdaptadorFragmentoRecicler extends RecyclerView.Adapter<AdaptadorFr
     public void onBindViewHolder(AdaptadorFragmentoReciclerHolder holder, int position) {
         Contacto contacto=contactos.get(position);
         holder.like.setText(String.valueOf(contacto.getLike()));
+        Toast.makeText(context, contacto.getUrlPerfil(), Toast.LENGTH_SHORT).show();
+        Picasso.with(context).
+                load(contacto.getUrlPerfil()).
+                placeholder(R.drawable.imagen).
+                into(holder.imagenPerfil);
     }
 
     @Override

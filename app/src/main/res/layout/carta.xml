@@ -12,7 +12,7 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/altoCarta"
             android:id="@+id/perfilCarta"
             android:src="@drawable/imagen"
             android:layout_gravity="center_horizontal"/>
