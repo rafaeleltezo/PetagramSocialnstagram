@@ -30,14 +30,10 @@ public class enviarToken extends FirebaseInstanceIdService {
         AdaptadorRetrofitConexion conexion=new AdaptadorRetrofitConexion();
         Endpoint endpoint=conexion.establecerConexionToken();
         Call<RespuestaUsuario>respuesta=endpoint.getToken(token);
-        Intent i=new Intent(this, MainActivity.class);
-        i.putExtra("token",token);
-        startActivity(i);
         respuesta.enqueue(new Callback<RespuestaUsuario>() {
             @Override
             public void onResponse(Call<RespuestaUsuario> call, Response<RespuestaUsuario> response) {
-                String token=response.body().getToken();
-                Toast.makeText(enviarToken.this,"token= "+token, Toast.LENGTH_SHORT).show();
+                Toast.makeText(enviarToken.this,"token= "+response.body().getToken(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
