@@ -1,10 +1,12 @@
 package com.app.master.petagramsocial;
 
+import android.app.NotificationManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.app.master.petagramsocial.Presentador.NotificacionToken;
 import com.app.master.petagramsocial.Vista.AdaptadorPager;
 
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         viewPager=(ViewPager)findViewById(R.id.viewPager);
         establecerViewPager();
+        NotificacionToken notificacionToken=new NotificacionToken();
 
     }
     public void establecerViewPager(){
