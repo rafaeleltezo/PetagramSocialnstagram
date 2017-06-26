@@ -31,5 +31,6 @@ public class NotificacionToken extends FirebaseMessagingService {
                 .setSound(timbre)
                 .setContentIntent(pendingIntent);
         NotificationManager notificationManager=(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(12,ConstruyendoNotificacion.build());
     }
 }
