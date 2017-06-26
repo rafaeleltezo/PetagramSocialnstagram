@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.app.master.petagramsocial.Presentador.NotificacionToken;
 import com.app.master.petagramsocial.Vista.AdaptadorPager;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
 
@@ -45,9 +46,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.recibirNotificacion:
-                Bundle b=getIntent().getExtras();
-                String token=b.getString("token");
-                Toast.makeText(this, "token= "+ token , Toast.LENGTH_SHORT).show();
+                String token = FirebaseInstanceId.getInstance().getToken();
+                Toast.makeText(this,"token " + token, Toast.LENGTH_SHORT).show();
                 return true;
 
 
