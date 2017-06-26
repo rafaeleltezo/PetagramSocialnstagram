@@ -24,4 +24,13 @@ public class AdaptadorRetrofitConexion {
         gsonBuilder.registerTypeAdapter(ContactoRespuesta.class,new DeserializadorInstagramMediaRecent());
         return gsonBuilder.create();
     }
+
+    public  Endpoint establecerConexionToken(){
+        Retrofit retrofit=new Retrofit.Builder()
+                .baseUrl(ConstantesToken.URLBASE)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(Endpoint.class);
+    }
+
 }
