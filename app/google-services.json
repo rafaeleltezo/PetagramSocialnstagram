@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "97156181696",
+    "firebase_url": "https://petagram-social.firebaseio.com",
+    "project_id": "petagram-social",
+    "storage_bucket": "petagram-social.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97156181696:android:a065aab182b8a2d4",
+        "android_client_info": {
+          "package_name": "com.app.master.petagramsocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97156181696-cebiaam1unjddgcs1ftvtdg9g3n1u5mv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.master.petagramsocial",
+            "certificate_hash": "d1478c57b1ce233fea8474adda3ab4916fa02c52"
+          }
+        },
+        {
+          "client_id": "97156181696-a7t2re93a4j8rtt7gm1u9md08gg8g6s8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDpRBYebH3U8jn9YmjlY5LCOqSmafMC_8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97156181696-a7t2re93a4j8rtt7gm1u9md08gg8g6s8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
