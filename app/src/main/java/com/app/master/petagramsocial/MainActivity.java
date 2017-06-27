@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 String token = FirebaseInstanceId.getInstance().getToken();
                 Toast.makeText(this,"token " + token, Toast.LENGTH_SHORT).show();
                 return true;
-
-
         }
         return false;
     }

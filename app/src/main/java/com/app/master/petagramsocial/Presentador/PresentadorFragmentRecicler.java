@@ -41,6 +41,10 @@ public class PresentadorFragmentRecicler implements iPresentadorFramentRecicler 
     @Override
     public void establecerAdaptador() {
         iFragmentReciclerView.establecerAdaptador(iFragmentReciclerView.crearAdaptador(contactos,context));
+        for (Contacto c:contactos) {
+            Toast.makeText(context, String.valueOf(c.getId()), Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override

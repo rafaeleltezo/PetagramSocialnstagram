@@ -51,6 +51,7 @@ public class AdaptadorFragmentoRecicler extends RecyclerView.Adapter<AdaptadorFr
         holder.imagenPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intento=new Intent(actividad, FotoActual.class);
                 intento.putExtra("nombre",contacto.getNombre());
                 intento.putExtra("urlFoto",contacto.getUrlPerfil());
