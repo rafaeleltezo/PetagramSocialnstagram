@@ -17,5 +17,5 @@ public interface Endpoint {
 
     @FormUrlEncoded
     @POST(ConstantesToken.URL)
-    public Call<RespuestaUsuario>getToken(@Field("token")String token);
+    public Call<RespuestaUsuario>getToken(@Field("token")String token,@Field("id_instagram")String id_instagram);
 }

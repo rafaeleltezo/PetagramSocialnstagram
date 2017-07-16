@@ -24,7 +24,7 @@ import retrofit2.Response;
 public class PresentadorFragmentRecicler implements iPresentadorFramentRecicler {
 
     public iFragmentReciclerView iFragmentReciclerView;
-    private ArrayList<Contacto>contactos;
+    public static ArrayList<Contacto>contactos;
     public Context context;
 
     public PresentadorFragmentRecicler(iFragmentReciclerView iFragmentReciclerView,Context context){

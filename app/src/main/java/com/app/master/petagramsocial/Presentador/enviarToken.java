@@ -29,11 +29,12 @@ public class enviarToken extends FirebaseInstanceIdService {
     private void registarToken(String token){
         AdaptadorRetrofitConexion conexion=new AdaptadorRetrofitConexion();
         Endpoint endpoint=conexion.establecerConexionToken();
-        Call<RespuestaUsuario>respuesta=endpoint.getToken(token);
+        Call<RespuestaUsuario>respuesta=endpoint.getToken(token,String.valueOf(PresentadorFragmentRecicler.contactos.get(1).getId()));
         respuesta.enqueue(new Callback<RespuestaUsuario>() {
             @Override
             public void onResponse(Call<RespuestaUsuario> call, Response<RespuestaUsuario> response) {
                 Toast.makeText(enviarToken.this,"token= "+response.body().getToken(), Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
